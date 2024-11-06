@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image OCR</title>
+</head>
+<body>
+    <h1>Image OCR</h1>
+    <p>Upload an image for OCR:</p>
+    <form method="POST" action="/extract-text" enctype="multipart/form-data">
+        <input type="file" name="image" accept=".png, .jpg, .jpeg, .gif" required>
+        <button type="submit">Scan Image</button>
+    </form>
+    <div id="result">
+        {% if extracted_text %}
+            <h2>Extracted Text:</h2>
+            <p>{{ extracted_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
